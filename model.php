@@ -27,7 +27,7 @@ function connect()
     $serve = 'localhost:3306';
     $username = 'root';
     $password = 'root';
-    $dbname = 'archive';//数据表
+    $dbname = 'archive';//数据库名字
     $mysqli = new Mysqli($serve, $username, $password, $dbname);//创建连接
     if ($mysqli->connect_error) {//判断是否链接成功
         die('connect error:' . $mysqli->connect_errno);
@@ -56,6 +56,23 @@ function isLogin()
     } else {
         // 若没有登录
         return 0;
+    }
+}
+
+/**
+ * 判断数据表是否存在
+ * @param $mysqli Mysqli对象
+ * @param $table 要判断的表
+ * @return bool
+ */
+function checkTable($mysqli, $table)
+{
+    # 判断内容表是否存在
+    $checkTable = $mysqli->query("show tables like '$table'")->fetch_row();
+    if (isset($checkTable)) {
+       return true;
+    } else {
+        return false;
     }
 }
 
