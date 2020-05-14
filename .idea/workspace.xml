@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="登录 登出 登录缓存 持久验证" />
+    <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="登录 登出 登录缓存 持久验证">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,11 +37,15 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Dxoca\Code\PHP\Archive" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Dxoca\Code\PHP\Archive" />
     </key>
@@ -43,11 +61,23 @@
       <option name="presentableId" value="Default" />
       <updated>1589445018591</updated>
       <workItem from="1589445021807" duration="555000" />
+      <workItem from="1589445581479" duration="355000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="登录 登出 登录缓存 持久验证" />
@@ -66,6 +96,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="771" y="458" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589445405031" />
+    <state x="832" y="437" key="Github.ShareDialog" timestamp="1589445631890">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="832" y="437" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589445631890" />
+    <state x="804" y="244" key="Github.UntrackedFilesDialog" timestamp="1589445642759">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="804" y="244" key="Github.UntrackedFilesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589445642759" />
     <state x="644" y="239" key="SettingsEditor" timestamp="1589445033094">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
