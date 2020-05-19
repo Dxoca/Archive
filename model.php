@@ -70,9 +70,83 @@ function checkTable($mysqli, $table)
     # 判断内容表是否存在
     $checkTable = $mysqli->query("show tables like '$table'")->fetch_row();
     if (isset($checkTable)) {
-       return true;
+        return true;
     } else {
         return false;
+    }
+}
+
+/**
+ * @return array|false|string
+ * 获取登录ip
+ */
+function getIP()
+{
+    global $ip;
+    if (getenv("HTTP_CLIENT_IP"))
+        $ip = getenv("HTTP_CLIENT_IP");
+    else if (getenv("HTTP_X_FORWARDED_FOR"))
+        $ip = getenv("HTTP_X_FORWARDED_FOR");
+    else if (getenv("REMOTE_ADDR"))
+        $ip = getenv("REMOTE_ADDR");
+    else
+        $ip = "UnKnow";
+    return $ip;
+}
+
+/**
+ * @param $mysqli 初始化创建表
+ * 内容表
+ * 登录日志
+ * admin 表
+ */
+function initTable($mysqli)
+{
+    ##！！！！！ 是不是应该弄一个连接到数据库 初始化建表！！！
+    # 判断内容表是否已创建 init 内容表;
+    if (checkTable($mysqli, 'content')) {
+        ##创建内容表
+        $sql_content = <<<TAG
+                    CREATE TABLE `content` (
+                  `Id` int(11) NOT NULL AUTO_INCREMENT,
+                  `text` text,
+                  `datetime` datetime DEFAULT NULL,
+                  `who` varchar(25) DEFAULT NULL,
+                  PRIMARY KEY (`Id`)
+                  ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+                  TAG;
+
+        $mysqli->query($sql_content);
+        $getNowTime = getNowTime();
+        $username = $_SESSION['username'];
+        $mysqli->query("insert into `content` values (0 ,'欢迎使用Archive~ ','$getNowTime','Dxoca')");
+        $mysqli->query("INSERT INTO `content` VALUES (null ,'这是一条测试数据！','$getNowTime','$username')");
+//            echo "content表创建完成";
+    }
+
+    ## 登录日志表 id  ip 用户名 邮箱 时间 登录信息（error succeed）
+    if (!checkTable($mysqli, 'loginLog')) {
+        $sql_loginLog = <<<TAG
+            create table `loginLog`(
+             `Id` int(11) not null  auto_increment,
+             `ip` varchar(16)  DEFAULT NULL,
+             `username` varchar(15) DEFAULT NULL,
+             `email` varchar(25) DEFAULT NULL,
+             `datetime` datetime DEFAULT NULL,
+             `state` varchar (15) DEFAULT NULL,
+            PRIMARY KEY (`id`)
+            )ENGINE=MyISAM DEFAULT CHARSET=utf8;
+            TAG;
+        $mysqli->query($sql_loginLog);
+    }
+    ## 登录用户表 user
+    if (!checkTable($mysqli, 'user')) {
+#!#!#!
+        #!#!#!
+        #!#!#!
+        #!#!#!
+        #!#!#!
+        #!#!
     }
 }
 
