@@ -1,6 +1,5 @@
 <?php
 require_once 'model.php';//加载常量
-
 header('Content-type:text/html; charset=utf-8');
 ?>
 <html>
@@ -15,16 +14,17 @@ header('Content-type:text/html; charset=utf-8');
 </head>
 <body>
 <?php
+### 右上角 登录 已登录（用户名）
 if (isLogin()) {
 //  主页内容
     echo "你好! " . $_SESSION['username'] . ' ,欢迎来到主页!<br>';
     echo "<a href='logout.php'>注销</a>&nbsp;<a href='admin.php'>后台</a>";
 } else {
-
+    echo "<a href='admin.php'>登录</a>";
     //首页不需要强制登录
 
-    header('refresh:0.1; url=login.php');
-    echo "<script>alert('当前未登录')</script>";
+//    header('refresh:0.1; url=login.php');
+//    echo "<script>alert('当前未登录')</script>";
 }
 ?>
 </body>

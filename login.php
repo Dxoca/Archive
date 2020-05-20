@@ -2,14 +2,16 @@
 <?php
 require_once 'model.php';//加载常量
 header('Content-type:text/html; charset=utf-8');
+if(isLogin()){
+    echo "<script>alert('你已登录！')</script>";
+    header('refresh:0.1; url=admin.php');
+}
 ?>
 <html>
 <title>登录—<?php echo title() ?></title>
 <head>
-
 </head>
 <body>
-
 <form action="admin.php" method="post">
     <fieldset>
         <legend>用户登录</legend>
@@ -29,6 +31,7 @@ header('Content-type:text/html; charset=utf-8');
             <li>
                 <label> </label>
                 <input type="submit" name="login" value="登录">
+                <input type="submit" name="register" value="注册">
             </li>
         </ul>
     </fieldset>

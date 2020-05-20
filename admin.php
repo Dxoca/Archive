@@ -1,11 +1,12 @@
 <?php
 require_once 'model.php';//加载模块
 header('Content-type:text/html; charset=utf-8');
+
 $mysqli = connect();//连接数据库
 # 接受登录信息
 $email = $_POST['email'];
 $password = $_POST['password'];
-initTable($mysqli);//初始化创建表
+initTable($mysqli);//初始化创建表(内容表 日志表 用户表)
 ?>
 
 <?php
@@ -53,14 +54,10 @@ if (isset($_POST['login'])) {
         $mysqli->query("insert into `loginLog` values(null,'$ip','$username','$email','$nowTime','succeed')");
         // 处理完附加项后跳转到登录成功的首页
         echo "<script>alert('用户 $row[1] 登录成功！$nowTime')</script>";//显示用户名 并提示登录成功
-        ///登录日志表！！
-        /// ！
-        /// ！
-        /// ！
-        /// ！
-        /// ！
         header('refresh:0.1; url=admin.php');
     }
+} else if (isset($_POST['register'])) {
+    echo "注册";
 } else {//直接进入admin页面
     # 已登录
     if (isLogin()) {
@@ -75,7 +72,9 @@ if (isset($_POST['login'])) {
             <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
             <!--默认使用极速内核：针对国内浏览器产商-->
             <meta name="renderer" content="webkit">
-            <style type="text/css">.error{color: #F00}</style>
+            <style type="text/css">.error {
+                    color: #F00
+                }</style>
         </head>
         <body>
         <?php
@@ -89,7 +88,7 @@ if (isset($_POST['login'])) {
         //执行SQL 查询语句，并将结果集以表格的形式输出
         $loginLog_sql = "select * from loginLog";//查出表中所有数据
         $result = $mysqli->query($loginLog_sql);
-//        print_r($result); //调试数据
+        //        print_r($result); //调试数据
         echo '<table align="center" border="2" width="800">';
         echo '<caption><h3>登录日志</h3></caption>';
         echo '<tr>';
@@ -101,21 +100,22 @@ if (isset($_POST['login'])) {
 //        print_r($row[0] .'<br>'); //调试数据
             foreach ($row as $value) {//遍历每一行的每个数据[遍历row数组]
                 ## 登录失败的项目标红
-                if($value=="error") echo "<td class='error'>{$value}</td>";
+                if ($value == "error") echo "<td class='error'>{$value}</td>";
                 else echo "<td >{$value}</td>";
             }
             echo '</tr>';
         }
-        echo '</table>';
+        ## colspan 占6列
+        echo '<tr align ="center" ><td colspan="6">
+                    <a href=delete.php?action=delete_loginLog>清空日志</a>
+                </td></tr></table>';
         ?>
         </body>
         </html>
-
         <?php
-    }## 未登录
-    else {
+    } else {## 未登录
         header('refresh:0.1; url=login.php');
-        echo "<script>alert('登录失效，请重新登录')</script>";
+//        echo "<script>alert('登录失效，请重新登录')</script>";
     }
 }
 $mysqli = null;//清理缓存

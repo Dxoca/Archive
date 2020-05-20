@@ -65,7 +65,7 @@ function isLogin()
  * @param $table 要判断的表
  * @return bool
  */
-function checkTable($mysqli, $table)
+function hasTable($mysqli, $table)
 {
     # 判断内容表是否存在
     $checkTable = $mysqli->query("show tables like '$table'")->fetch_row();
@@ -99,12 +99,13 @@ function getIP()
  * 内容表
  * 登录日志
  * admin 表
+ * 防止 删表之后 没有表可以重新创建
  */
 function initTable($mysqli)
 {
     ##！！！！！ 是不是应该弄一个连接到数据库 初始化建表！！！
     # 判断内容表是否已创建 init 内容表;
-    if (checkTable($mysqli, 'content')) {
+    if (hasTable($mysqli, 'content')) {
         ##创建内容表
         $sql_content = <<<TAG
                     CREATE TABLE `content` (
@@ -125,7 +126,7 @@ function initTable($mysqli)
     }
 
     ## 登录日志表 id  ip 用户名 邮箱 时间 登录信息（error succeed）
-    if (!checkTable($mysqli, 'loginLog')) {
+    if (!hasTable($mysqli, 'loginLog')) {
         $sql_loginLog = <<<TAG
             create table `loginLog`(
              `Id` int(11) not null  auto_increment,
@@ -139,14 +140,23 @@ function initTable($mysqli)
             TAG;
         $mysqli->query($sql_loginLog);
     }
-    ## 登录用户表 user
-    if (!checkTable($mysqli, 'user')) {
-#!#!#!
-        #!#!#!
-        #!#!#!
-        #!#!#!
-        #!#!#!
-        #!#!
+    ## 创建登录用户表 user
+    if (!hasTable($mysqli, 'user')) {
+        $sql_user = <<<TAG
+            CREATE TABLE `user` (
+              `email` varchar(25) NOT NULL DEFAULT '',
+              `username` varchar(15) NOT NULL DEFAULT '',
+              `password` varchar(255) DEFAULT NULL,
+              `Power` int(2) DEFAULT NULL,
+              PRIMARY KEY (`email`)
+            ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='user password';
+            TAG;
+        $mysqli->query($sql_user);
+        //默认用户
+        $mysqli->query("INSERT INTO `user` VALUES ('987284242@qq.com','寒光','admin',NULL),
+            ('admin@dxoca.cn','admin','admin',NULL),
+            ('dxoca@xkx.me','user3','admin2',NULL),
+            ('i@dxoca.cn','user2','123456',NULL);");
     }
 }
 

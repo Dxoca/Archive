@@ -11,9 +11,8 @@ session_destroy();
 // 清除Cookie
 setcookie('email', '', time() - 99);
 setcookie('code', '', time() - 99);
-
 // 提示信息
-header('refresh:0.1; url=login.php');
+header('refresh:0.1; url=index.php');
 echo "<script>alert('欢迎下次光临！$username : $email')</script>";
 
 
