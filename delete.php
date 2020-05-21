@@ -5,7 +5,8 @@ header('Content-type:text/html; charset=utf-8');
 
 ## 防止未登录进入此页面
 if (!isLogin()) {
-    echo "<script>alert('当前未登录');javascript:history.back(1);</script>";
+    echo "<script>alert('当前未登录');</script>";
+    header('refresh:0.1; url=index.php');
 } else {
     $mysqli = connect();
 ## 删除登录日志

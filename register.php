@@ -1,14 +1,34 @@
 <?php
 require_once 'model.php';//加载模块
 header('Content-type:text/html; charset=utf-8');
-$mysqli = connect();//连接数据库
 
-if($_GET['action']=="register"){
-    echo "注册";
+
+if ($_GET['action'] == "register") {
+    $mysqli = connect();//连接数据库
+    $username = $_POST['r_username'];
+    $email = $_POST['r_email'];
+    $password = $_POST['r_password'];
+    echo $email;
+    # 判断登录信息
+    if (($email == '') || ($password == '') || ($username == '')) {
+        echo "<script>alert('用户名或密码不能为空,请重新填写登录信息!');</script>";
+        header('refresh:0.1; url=register.php');
+        exit;
+    } else {
+        $result = $mysqli->query("select * from `user` where email='$email'");
+        $row = $result->fetch_row();
+        if ($result->num_rows == 0) {##0是主键未注册
+            $mysqli->query("insert into `user` values ('$email','$username','$password',null )");
+            echo "<script>alert('注册成功！');</script>";
+            ### 跳转到 登录界面  action 把 信息自动填写，直接登录即可登录原本直接登录了 ，可是没有函数化登录模块！。。
+            ##或者 直接 session开启似乎也可以
+
+        } else {
+            echo "<script>alert('邮箱：$row[0]已注册！');</script>";
+        }
+    }
 }
 ?>
-
-
 <html>
 <title><?php title() ?></title>
 <head>

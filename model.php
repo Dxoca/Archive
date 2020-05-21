@@ -105,14 +105,14 @@ function initTable($mysqli)
 {
     ##！！！！！ 是不是应该弄一个连接到数据库 初始化建表！！！
     # 判断内容表是否已创建 init 内容表;
-    if (hasTable($mysqli, 'content')) {
+    if (!hasTable($mysqli, 'content')) {
         ##创建内容表
         $sql_content = <<<TAG
                     CREATE TABLE `content` (
                   `Id` int(11) NOT NULL AUTO_INCREMENT,
                   `text` text,
                   `datetime` datetime DEFAULT NULL,
-                  `who` varchar(25) DEFAULT NULL,
+                  `username` varchar(25) DEFAULT NULL,
                   PRIMARY KEY (`Id`)
                   ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
                   TAG;
@@ -153,10 +153,9 @@ function initTable($mysqli)
             TAG;
         $mysqli->query($sql_user);
         //默认用户
-        $mysqli->query("INSERT INTO `user` VALUES ('987284242@qq.com','寒光','admin',NULL),
-            ('admin@dxoca.cn','admin','admin',NULL),
-            ('dxoca@xkx.me','user3','admin2',NULL),
-            ('i@dxoca.cn','user2','123456',NULL);");
+        $mysqli->query("
+            INSERT INTO `user` VALUES ('987284242@qq.com','寒光','admin',NULL),
+            ('admin@dxoca.cn','admin','admin',NULL);");
     }
 }
 
