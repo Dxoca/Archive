@@ -57,7 +57,7 @@ if (isset($_POST['login'])) {
         header('refresh:0.1; url=admin.php');
     }
 } else if (isset($_POST['register'])) {
-    echo "注册";
+    header('refresh:0; url=register.php');
 } else {//直接进入admin页面
     # 已登录
     if (isLogin()) {
@@ -83,7 +83,53 @@ if (isset($_POST['login'])) {
         echo "<a href='logout.php'>注销</a>&nbsp;<a href='index.php'>首页</a><br>";
         ?>
         这里是对数据进行操作 增删改查 记得记录管理员登录日志<br>
+
+
         <?php
+        ## 打印 content 内容表
+
+        ## 缺陷 应该设置uid 对应内容表的信息发表者，登录日志也记录uid 再取出用户
+        ## 缺陷 应该设置uid 对应内容表的信息发表者，登录日志也记录uid 再取出用户
+        ## 缺陷 应该设置uid 对应内容表的信息发表者，登录日志也记录uid 再取出用户
+
+        //执行SQL 查询语句，并将结果集以表格的形式输出
+        $content_sql = "select * from content";//查出表中所有数据
+        $result = $mysqli->query($content_sql);
+        //        print_r($result); //调试数据
+        ?>
+        <form action="delete.php?action=delete_content" method="post" >
+        <?php
+        echo '<table align="center" border="2" width="800">';
+        echo '<caption><h3>Archive-归档</h3></caption>';
+        echo '<tr>';
+        echo '<th>id</th><th>text</th><th>datetime</th><th>username</th><th>delete</th>';
+        echo '</tr>';
+        //fetch_row()函数每执行一次，指针向后自动移动一位，直到最后没有数据记录返回false
+        while ($row = $result->fetch_row()) {
+            echo '<tr align ="center">';
+//        print_r($row[0] .'<br>'); //调试数据
+            foreach ($row as $value) {//遍历每一行的每个数据[遍历row数组]
+                ## 登录失败的项目标红
+                if ($value == "error") echo "<td class='error'>{$value}</td>";
+                else echo "<td >{$value}</td>";
+            }
+            ?>
+            <td>
+                <input type="checkbox" name="checkbox_content[]" value=<?php echo $row['0'];?>>
+            </td>><?php
+            echo '</tr>';
+        }
+
+        ## colspan 占6列
+        echo '<tr align ="center" ><td colspan="6">
+ <input type="submit" name="delete_content" value="删除"></td></tr></table>
+</form>';
+        ?>
+
+
+        <?php
+        ## 打印 loginLog表
+        ## 打印 loginLog表
         ## 打印 loginLog表
         //执行SQL 查询语句，并将结果集以表格的形式输出
         $loginLog_sql = "select * from loginLog";//查出表中所有数据
@@ -110,6 +156,8 @@ if (isset($_POST['login'])) {
                     <a href=delete.php?action=delete_loginLog>清空日志</a>
                 </td></tr></table>';
         ?>
+
+
         </body>
         </html>
         <?php

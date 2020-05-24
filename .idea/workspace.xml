@@ -19,15 +19,16 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="日志清空 删除模块，注册模块正在写">
+    <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="注册模块">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +89,9 @@
       <workItem from="1589850615008" duration="9318000" />
       <workItem from="1589892730692" duration="1454000" />
       <workItem from="1589942220064" duration="15531000" />
-      <workItem from="1590048291163" duration="10203000" />
+      <workItem from="1590048291163" duration="11921000" />
+      <workItem from="1590135993540" duration="255000" />
+      <workItem from="1590329420651" duration="6098000" />
     </task>
     <task id="LOCAL-00001" summary="修改逻辑结构">
       <created>1589445973808</created>
@@ -139,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589954721964</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="注册模块">
+      <created>1590067249701</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590067249701</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +160,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -165,9 +187,14 @@
     <MESSAGE value="admin 内容表初始化" />
     <MESSAGE value="初始化创建表 登录日志输入输出" />
     <MESSAGE value="日志清空 删除模块，注册模块正在写" />
-    <option name="LAST_COMMIT_MESSAGE" value="日志清空 删除模块，注册模块正在写" />
+    <MESSAGE value="注册模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="注册模块" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="586" y="218" key="#Inspections" timestamp="1590332368940">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="586" y="218" key="#Inspections/0.0.1920.1080@0.0.1920.1080" timestamp="1590332368940" />
     <state x="842" y="401" key="#Notifications" timestamp="1589445544356">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -208,9 +235,17 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="644" y="239" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1589445033094" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1589954739555">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590067276081">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1589954739555" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590067276081" />
+    <state x="662" y="138" width="596" height="804" key="find.popup" timestamp="1590330325318">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="662" y="138" width="596" height="804" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1590330325318" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1590333088306">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1590333088306" />
   </component>
 </project>

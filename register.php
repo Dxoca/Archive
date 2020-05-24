@@ -22,7 +22,6 @@ if ($_GET['action'] == "register") {
             echo "<script>alert('注册成功！');</script>";
             ### 跳转到 登录界面  action 把 信息自动填写，直接登录即可登录原本直接登录了 ，可是没有函数化登录模块！。。
             ##或者 直接 session开启似乎也可以
-
         } else {
             echo "<script>alert('邮箱：$row[0]已注册！');</script>";
         }
