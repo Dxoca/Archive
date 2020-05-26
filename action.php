@@ -26,12 +26,13 @@ if (!isLogin()) {
 
             $idArray = $_POST['checkbox_content'];
             ## 强制转换为数组，不然报错（为什么呢 是因为刚开始是对象么qwq）
-            if (count((array)$idArray) <= 0) {
+            if (count((array)$idArray) <= 0) {//如果没有选择 技术数组个数
                 echo "<script>alert('请选择需要删除的内容！')</script>";
                 header('refresh:0.1; url=admin.php');
             } else {
+                //删除数组内所有id对应的项
                 foreach ($idArray as $id) {
-                    $mysqli->query("delete from content where Id=$id");
+                    $mysqli->query("delete from content where Id='$id'");
                     echo "删除id:(" . $id . ")成功！<br/>";
                     header('refresh:1; url=admin.php');
                 }
@@ -39,12 +40,42 @@ if (!isLogin()) {
 //            echo '你选择了:'.implode(',',$idArray);
             break;
         case "edit_content":## 修改内容
-            echo "修改内容";
+//            echo $_GET['id']; 取出要修改的id
+            $id = $_GET['id'];
+            if ($id == null)//防止直接进入该页面 【实际可以先判断有无id对应项 先暂时敷衍一下...】
+                echo "错误";
+            else {
+                $sql_oldContent = "select * from content where Id='$id'";//查询id对应的项
+                $result = $mysqli->query($sql_oldContent)->fetch_row();//项的所有字段取出
+                print_r($result);
+                echo <<<TAG
+ <form action="action.php?action=new_edit_content" method="post">
+            <table align="center">
+                <caption><h4>Archive-修改</h4></caption>
+                <tr>
+                    <th>
+                        <textarea rows="3" cols="40" type="text" name="text">$result[1]</textarea>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                    <label>author:</label>
+                        <input  type="text" name="username" value="$result[3]">
+                    </th>
+                </tr>
+                <tr><th><input type="submit" name="edit" value="修改"></th></tr>
+            </table>
+        </form>
+TAG;
+            }
+            break;
+        case "new_edit_content":
+            echo "确认提交";
             break;
         case "insert_content":## 添加内容
 //            print_r($GLOBALS);
             $insert_text = $_POST['text'];
-            if ($insert_text != '') {
+            if ($insert_text != '') {//判断写入内容是否为空
                 $username = $_SESSION['username'];
                 $datetime = getNowTime();
                 $mysqli->query("insert into `content` values (0 ,'$insert_text','$datetime','$username')");

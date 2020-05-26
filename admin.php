@@ -98,8 +98,6 @@ if (isset($_POST['login'])) {
                 <tr><th><input type="submit" name="insert" value="添加"></th></tr>
             </table>
         </form>
-
-
         <?php
         ## content 内容表 处理
 
@@ -113,7 +111,6 @@ if (isset($_POST['login'])) {
         //        print_r($result); //调试数据
         ?>
         <form action="action.php?action=delete_content" method="post">
-
             <table align="center" border="2" width="800">
                 <caption><h3>Archive-归档删除修改</h3></caption>
                 <tr>
@@ -121,6 +118,7 @@ if (isset($_POST['login'])) {
                     <th>text</th>
                     <th>datetime</th>
                     <th>username</th>
+                    <th>like</th>
                     <th>delete</th>
                     <th>event</th>
                 </tr>
@@ -140,14 +138,17 @@ if (isset($_POST['login'])) {
                     <td>
                         <input type="checkbox" name="checkbox_content[]" value=<?php echo $row['0']; ?>>
                     </td>
-                    <td><a href=action.php?action=edit_content>修改</a></td>
+
                     <?php
+                    echo "<td><a href=action.php?action=edit_content&id=$row[0]>修改</a></td>";
                     echo '</tr>';
                 }
                 ?>
                 <tr align="center">
                     <td colspan="6">
-                        <input type="submit" name="delete_content" value="删除选中项"></td>
+                        <input type="submit" name="delete_content" value="删除选中项">
+                    </td>
+                    <td class="red">全选</td>
                 </tr>
             </table>
         </form>

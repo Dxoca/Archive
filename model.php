@@ -113,10 +113,10 @@ function initTable($mysqli)
                   `text` text,
                   `datetime` datetime DEFAULT NULL,
                   `username` varchar(25) DEFAULT NULL,
+                  `like` int(11) NOT null default '0';
                   PRIMARY KEY (`Id`)
                   ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
                   TAG;
-
         $mysqli->query($sql_content);//创建内容表 sql执行
         $getNowTime = getNowTime();
         $username = $_SESSION['username'];
