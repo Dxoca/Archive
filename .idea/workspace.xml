@@ -28,8 +28,9 @@
     <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="注册模块">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/action.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +92,8 @@
       <workItem from="1589942220064" duration="15531000" />
       <workItem from="1590048291163" duration="11921000" />
       <workItem from="1590135993540" duration="255000" />
-      <workItem from="1590329420651" duration="6098000" />
+      <workItem from="1590329420651" duration="6768000" />
+      <workItem from="1590463345308" duration="4369000" />
     </task>
     <task id="LOCAL-00001" summary="修改逻辑结构">
       <created>1589445973808</created>
@@ -149,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590067249701</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="delete_content all！">
+      <created>1590335610769</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590335610769</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +197,8 @@
     <MESSAGE value="初始化创建表 登录日志输入输出" />
     <MESSAGE value="日志清空 删除模块，注册模块正在写" />
     <MESSAGE value="注册模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="注册模块" />
+    <MESSAGE value="delete_content all！" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete_content all！" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="218" key="#Inspections" timestamp="1590332368940">
@@ -235,14 +245,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="644" y="239" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1589445033094" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590067276081">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590335613701">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590067276081" />
-    <state x="662" y="138" width="596" height="804" key="find.popup" timestamp="1590330325318">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590335613701" />
+    <state x="662" y="138" width="596" height="804" key="find.popup" timestamp="1590465915219">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="662" y="138" width="596" height="804" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1590330325318" />
+    <state x="662" y="138" width="596" height="804" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1590465915219" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1590333088306">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

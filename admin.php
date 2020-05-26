@@ -72,21 +72,36 @@ if (isset($_POST['login'])) {
             <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
             <!--默认使用极速内核：针对国内浏览器产商-->
             <meta name="renderer" content="webkit">
-            <style type="text/css">.error {
+            <style type="text/css">.red {
                     color: #F00
                 }</style>
         </head>
         <body>
         <?php
         //  主页内容
-        echo "你好! " . $_SESSION['username'] . ' ,欢迎来到后台!<br>';
+        echo "你好! <a href='#' class='red'>" . $_SESSION['username'] . '</a> ,欢迎来到后台!<br>';
         echo "<a href='logout.php'>注销</a>&nbsp;<a href='index.php'>首页</a><br>";
         ?>
         这里是对数据进行操作 增删改查 记得记录管理员登录日志<br>
+        <?php
+
+        ## content 内容表 添加 tables+表单
+        ?>
+        <form action="action.php?action=insert_content" method="post">
+            <table align="center">
+                <caption><h4>Archive-归档写入</h4></caption>
+                <tr>
+                    <th>
+                        <textarea rows="3" cols="40" type="text" name="text"></textarea>
+                    </th>
+                </tr>
+                <tr><th><input type="submit" name="insert" value="添加"></th></tr>
+            </table>
+        </form>
 
 
         <?php
-        ## 打印 content 内容表
+        ## content 内容表 处理
 
         ## 缺陷 应该设置uid 对应内容表的信息发表者，登录日志也记录uid 再取出用户
         ## 缺陷 应该设置uid 对应内容表的信息发表者，登录日志也记录uid 再取出用户
@@ -97,34 +112,45 @@ if (isset($_POST['login'])) {
         $result = $mysqli->query($content_sql);
         //        print_r($result); //调试数据
         ?>
-        <form action="delete.php?action=delete_content" method="post" >
-        <?php
-        echo '<table align="center" border="2" width="800">';
-        echo '<caption><h3>Archive-归档</h3></caption>';
-        echo '<tr>';
-        echo '<th>id</th><th>text</th><th>datetime</th><th>username</th><th>delete</th>';
-        echo '</tr>';
-        //fetch_row()函数每执行一次，指针向后自动移动一位，直到最后没有数据记录返回false
-        while ($row = $result->fetch_row()) {
-            echo '<tr align ="center">';
-//        print_r($row[0] .'<br>'); //调试数据
-            foreach ($row as $value) {//遍历每一行的每个数据[遍历row数组]
-                ## 登录失败的项目标红
-                if ($value == "error") echo "<td class='error'>{$value}</td>";
-                else echo "<td >{$value}</td>";
-            }
-            ?>
-            <td>
-                <input type="checkbox" name="checkbox_content[]" value=<?php echo $row['0'];?>>
-            </td>><?php
-            echo '</tr>';
-        }
+        <form action="action.php?action=delete_content" method="post">
 
-        ## colspan 占6列
-        echo '<tr align ="center" ><td colspan="6">
- <input type="submit" name="delete_content" value="删除"></td></tr></table>
-</form>';
-        ?>
+            <table align="center" border="2" width="800">
+                <caption><h3>Archive-归档删除修改</h3></caption>
+                <tr>
+                    <th>id</th>
+                    <th>text</th>
+                    <th>datetime</th>
+                    <th>username</th>
+                    <th>delete</th>
+                    <th>event</th>
+                </tr>
+                <?php
+                //fetch_row()函数每执行一次，指针向后自动移动一位，直到最后没有数据记录返回false
+                while ($row = $result->fetch_row()) {
+                    echo '<tr align ="center">';
+//        print_r($row[0] .'<br>'); //调试数据
+                    foreach ($row as $value) {//遍历每一行的每个数据[遍历row数组]
+                        ## 登录失败的项目标红
+                        if ($value == "error")
+                            echo "<td class='red'>{$value}</td>";
+                        else
+                            echo "<td >{$value}</td>";
+                    }
+                    ?>
+                    <td>
+                        <input type="checkbox" name="checkbox_content[]" value=<?php echo $row['0']; ?>>
+                    </td>
+                    <td><a href=action.php?action=edit_content>修改</a></td>
+                    <?php
+                    echo '</tr>';
+                }
+                ?>
+                <tr align="center">
+                    <td colspan="6">
+                        <input type="submit" name="delete_content" value="删除选中项"></td>
+                </tr>
+            </table>
+        </form>
 
 
         <?php
@@ -135,29 +161,40 @@ if (isset($_POST['login'])) {
         $loginLog_sql = "select * from loginLog";//查出表中所有数据
         $result = $mysqli->query($loginLog_sql);
         //        print_r($result); //调试数据
-        echo '<table align="center" border="2" width="800">';
-        echo '<caption><h3>登录日志</h3></caption>';
-        echo '<tr>';
-        echo '<th>id</th><th>ip</th><th>user</th><th>email</th><th>datetime</th><th>state</th>';
-        echo '</tr>';
-        //fetch_row()函数每执行一次，指针向后自动移动一位，直到最后没有数据记录返回false
-        while ($row = $result->fetch_row()) {
-            echo '<tr align ="center">';
-//        print_r($row[0] .'<br>'); //调试数据
-            foreach ($row as $value) {//遍历每一行的每个数据[遍历row数组]
-                ## 登录失败的项目标红
-                if ($value == "error") echo "<td class='error'>{$value}</td>";
-                else echo "<td >{$value}</td>";
-            }
-            echo '</tr>';
-        }
-        ## colspan 占6列
-        echo '<tr align ="center" ><td colspan="6">
-                    <a href=delete.php?action=delete_loginLog>清空日志</a>
-                </td></tr></table>';
         ?>
 
-
+        <table align="center" border="2" width="800">
+            <caption><h3>登录日志</h3></caption>
+            <tr>
+                <th>id</th>
+                <th>ip</th>
+                <th>user</th>
+                <th>email</th>
+                <th>datetime</th>
+                <th>state</th>
+            </tr>
+            <?php
+            //fetch_row()函数每执行一次，指针向后自动移动一位，直到最后没有数据记录返回false
+            while ($row = $result->fetch_row()) {
+                echo '<tr align ="center">';
+//        print_r($row[0] .'<br>'); //调试数据
+                foreach ($row as $value) {//遍历每一行的每个数据[遍历row数组]
+                    ## 登录失败的项目标红
+                    if ($value == "error")
+                        echo "<td class='red'>{$value}</td>";
+                    else
+                        echo "<td >{$value}</td>";
+                }
+                echo '</tr>';
+            }
+            ?>
+            <!--colspan 占6列-->
+            <tr align="center">
+                <td colspan="6">
+                    <a href=action.php?action=delete_loginLog>清空日志</a>
+                </td>
+            </tr>
+        </table>
         </body>
         </html>
         <?php

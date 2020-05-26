@@ -117,11 +117,11 @@ function initTable($mysqli)
                   ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
                   TAG;
 
-        $mysqli->query($sql_content);
+        $mysqli->query($sql_content);//创建内容表 sql执行
         $getNowTime = getNowTime();
         $username = $_SESSION['username'];
-        $mysqli->query("insert into `content` values (0 ,'欢迎使用Archive~ ','$getNowTime','Dxoca')");
-        $mysqli->query("INSERT INTO `content` VALUES (null ,'这是一条测试数据！','$getNowTime','$username')");
+        $mysqli->query("insert into `content` values (0 ,'欢迎使用Archive~ ','$getNowTime','Dxoca.cn')");
+        $mysqli->query("INSERT INTO `content` VALUES (null ,'但尽人事，莫问前程。','$getNowTime','$username')");
 //            echo "content表创建完成";
     }
 

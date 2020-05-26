@@ -1,7 +1,11 @@
 <?php
 require_once 'model.php';
 header('Content-type:text/html; charset=utf-8');
-
+/**
+ * 相关action操作模块
+ * 删除
+ * 修改
+ */
 
 ## 防止未登录进入此页面
 if (!isLogin()) {
@@ -32,13 +36,28 @@ if (!isLogin()) {
                     header('refresh:1; url=admin.php');
                 }
             }
-
-
 //            echo '你选择了:'.implode(',',$idArray);
+            break;
+        case "edit_content":## 修改内容
+            echo "修改内容";
+            break;
+        case "insert_content":## 添加内容
+//            print_r($GLOBALS);
+            $insert_text = $_POST['text'];
+            if ($insert_text != '') {
+                $username = $_SESSION['username'];
+                $datetime = getNowTime();
+                $mysqli->query("insert into `content` values (0 ,'$insert_text','$datetime','$username')");
+                echo "<script>alert('添加成功（ $insert_text $username $datetime ）');</script>";
+            } else {
+                echo "<script>alert('内容不能为空');</script>";
+            }
+            header('refresh:0.3; url=admin.php');
             break;
         default:
             ### 若是直接进入该页面 直接返回主页
-            header('refresh:0; url=index.php');
+            echo "404";
+            header('refresh:0.5; url=index.php');
     }
 }
 
