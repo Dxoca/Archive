@@ -25,7 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="注册模块">
+    <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="content修改 （差提交）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/action.php" beforeDir="false" afterPath="$PROJECT_DIR$/action.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
@@ -93,7 +93,8 @@
       <workItem from="1590135993540" duration="255000" />
       <workItem from="1590329420651" duration="6768000" />
       <workItem from="1590463345308" duration="6867000" />
-      <workItem from="1590488793531" duration="3225000" />
+      <workItem from="1590488793531" duration="4413000" />
+      <workItem from="1591082012718" duration="2502000" />
     </task>
     <task id="LOCAL-00001" summary="修改逻辑结构">
       <created>1589445973808</created>
@@ -165,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590467774881</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="content修改 （差提交）">
+      <created>1590495196000</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590495196000</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +214,8 @@
     <MESSAGE value="注册模块" />
     <MESSAGE value="delete_content all！" />
     <MESSAGE value="内容添加模块及一些bug边角料修复" />
-    <option name="LAST_COMMIT_MESSAGE" value="内容添加模块及一些bug边角料修复" />
+    <MESSAGE value="content修改 （差提交）" />
+    <option name="LAST_COMMIT_MESSAGE" value="content修改 （差提交）" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="218" key="#Inspections" timestamp="1590332368940">
@@ -253,10 +262,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="644" y="239" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1589445033094" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590467777946">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590495220339">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590467777946" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590495220339" />
     <state x="662" y="138" width="596" height="804" key="find.popup" timestamp="1590465915219">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

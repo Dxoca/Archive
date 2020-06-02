@@ -120,8 +120,8 @@ function initTable($mysqli)
         $mysqli->query($sql_content);//创建内容表 sql执行
         $getNowTime = getNowTime();
         $username = $_SESSION['username'];
-        $mysqli->query("insert into `content` values (0 ,'欢迎使用Archive~ ','$getNowTime','Dxoca.cn')");
-        $mysqli->query("INSERT INTO `content` VALUES (null ,'但尽人事，莫问前程。','$getNowTime','$username')");
+        $mysqli->query("insert into `content` values (0 ,'欢迎使用Archive~ ','$getNowTime','Dxoca.cn',1)");
+        $mysqli->query("INSERT INTO `content` VALUES (null ,'但尽人事，莫问前程。','$getNowTime','$username',0)");
 //            echo "content表创建完成";
     }
 

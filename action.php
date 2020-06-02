@@ -47,9 +47,9 @@ if (!isLogin()) {
             else {
                 $sql_oldContent = "select * from content where Id='$id'";//查询id对应的项
                 $result = $mysqli->query($sql_oldContent)->fetch_row();//项的所有字段取出
-                print_r($result);
+
                 echo <<<TAG
- <form action="action.php?action=new_edit_content" method="post">
+ <form action="action.php?action=new_edit_content&id=$id" method="post">
             <table align="center">
                 <caption><h4>Archive-修改</h4></caption>
                 <tr>
@@ -70,20 +70,32 @@ TAG;
             }
             break;
         case "new_edit_content":
-            echo "确认提交";
+            print_r($GLOBALS);
+            $text = $_POST['text'];
+            $username = $_POST['username'];
+            $id=$_GET['id'];
+            if($text!=''){
+                $sql_update = "UPDATE content SET text = '$text' , username = '$username' WHERE Id = '$id'";//更新数据
+                $mysqli->query($sql_update);
+                echo "<script>alert('修改成功！');</script>";
+            }else{
+                echo "<script>alert('内容不能为空');</script>";
+            }
+            header('refresh:0.5; url=admin.php');
+
             break;
-        case "insert_content":## 添加内容
+        case "insert_content":## 添加内容 最后一个是 喜欢
 //            print_r($GLOBALS);
             $insert_text = $_POST['text'];
             if ($insert_text != '') {//判断写入内容是否为空
                 $username = $_SESSION['username'];
                 $datetime = getNowTime();
-                $mysqli->query("insert into `content` values (0 ,'$insert_text','$datetime','$username')");
+                $mysqli->query("insert into `content` values (0 ,'$insert_text','$datetime','$username',0)");
                 echo "<script>alert('添加成功（ $insert_text $username $datetime ）');</script>";
             } else {
                 echo "<script>alert('内容不能为空');</script>";
             }
-            header('refresh:0.3; url=admin.php');
+            header('refresh:0.5; url=admin.php');
             break;
         default:
             ### 若是直接进入该页面 直接返回主页

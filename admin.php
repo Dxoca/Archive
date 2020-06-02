@@ -136,11 +136,11 @@ if (isset($_POST['login'])) {
                     }
                     ?>
                     <td>
-                        <input type="checkbox" name="checkbox_content[]" value=<?php echo $row['0']; ?>>
+                        <input type="checkbox" name="checkbox_content[]" value=<?php echo $row[0]; ?>>
                     </td>
 
                     <?php
-                    echo "<td><a href=action.php?action=edit_content&id=$row[0]>修改</a></td>";
+                    echo "<td><a href=action.php?action=edit_content&id=$row[0]>修改</a></td>";//顺便把id也传过去
                     echo '</tr>';
                 }
                 ?>
