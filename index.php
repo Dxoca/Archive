@@ -1,5 +1,7 @@
 <?php
 require_once 'model.php';//加载常量
+$mysqli = connect();
+initTable($mysqli);
 header('Content-type:text/html; charset=utf-8');
 ?>
 <html>
@@ -23,8 +25,6 @@ header('Content-type:text/html; charset=utf-8');
  * index body
  * @package custom
  */
-require_once 'model.php';//加载模块
-$mysqli = connect();
 ?>
 
 <div class="bg-image-pattern" style="

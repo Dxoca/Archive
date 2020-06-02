@@ -1595,4 +1595,8 @@ mark
 }
 .wrapper {
     padding: 15px;
+}/**
+bug**/
+.m-t-none {
+    margin-bottom: 0!important;
 }
