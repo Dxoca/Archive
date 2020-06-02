@@ -1,5 +1,13 @@
 <!--登录注销界面-->
 <?php
+/**
+ * @package user
+ * 用户注销界面
+ */
+?>
+
+
+<?php
 header('Content-type:text/html; charset=utf-8');
 // 注销后的操作
 session_start();

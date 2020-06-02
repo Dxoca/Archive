@@ -1,0 +1,36 @@
+.bg-light  {
+    background-color: rgba(249, 249, 249, 0.7)!important;
+    box-shadow: 1px 1px 5px 5px rgba(203, 203, 203, 0.35);
+    -moz-box-shadow: 1px 1px 5px 5px rgba(203, 203, 203, 0.35);
+    padding: 20px;
+}
+.red {
+    color: #F00
+}
+#content{
+    width: 50%;
+    margin: 0 auto;
+}
+.list {
+    padding: 15px;
+    margin: 15px;
+}
+.foot{
+    text-align:center;
+    color: #ffffff;
+    background-color: #00000057;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+}
+.foot a{
+    color: #f06a6a;
+}
+body a {
+     color: #337ab7;
+     text-decoration: none;
+ }
+body{
+    margin: 0;
+}

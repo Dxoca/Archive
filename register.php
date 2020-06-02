@@ -22,6 +22,7 @@ if ($_GET['action'] == "register") {
             echo "<script>alert('注册成功！');</script>";
             ### 跳转到 登录界面  action 把 信息自动填写，直接登录即可登录原本直接登录了 ，可是没有函数化登录模块！。。
             ##或者 直接 session开启似乎也可以
+            header('refresh:0.1; url=login.php');
         } else {
             echo "<script>alert('邮箱：$row[0]已注册！');</script>";
         }
@@ -39,24 +40,49 @@ if ($_GET['action'] == "register") {
     <meta name="renderer" content="webkit">
 </head>
 <body>
-<form action="register.php?action=register" method="post">
+<div class="bg-image-pattern" style="
+    background: rgba(255, 255, 255, 0.05) url(images/bg-fixed.png) repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -997;
+"></div>
+<div class="bj-gd" style="
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -998;
+    background: url(images/868535394.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+"></div>
+<form action="register.php?action=register" method="post" style="
+    width: 320px;
+    margin: 200px auto;
+">
     <fieldset>
         <legend>用户注册</legend>
-        <ul>
+        <ul style="list-style-type: none;">
             <li>
                 <label>邮   箱:</label>
-                <input type="text" name="r_email">
+                <input type="text" name="r_email" style="background-color: #ffffff30;">
             </li>
             <li>
                 <label>昵   称:</label>
-                <input type="text" name="r_username">
+                <input type="text" name="r_username" style="background-color: #ffffff30;">
             </li>
             <li>
                 <label>密   码:</label>
-                <input type="password" name="r_password">
-            </li>
+                <input type="password" name="r_password" style="background-color: #ffffff30;">
+            </li><br>
             <li>
-                <label> </label>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <input type="submit" name="register" value="注册">
             </li>
         </ul>

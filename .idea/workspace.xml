@@ -26,10 +26,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="content修改 （差提交）">
+      <change afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/quick.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/action.php" beforeDir="false" afterPath="$PROJECT_DIR$/action.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +46,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
@@ -57,6 +72,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,10 +82,11 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Dxoca\Code\PHP\Archive\css" />
       <recent name="E:\Dxoca\Code\PHP\Archive" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Dxoca\Code\PHP\Archive" />
     </key>
   </component>
@@ -94,7 +111,7 @@
       <workItem from="1590329420651" duration="6768000" />
       <workItem from="1590463345308" duration="6867000" />
       <workItem from="1590488793531" duration="4413000" />
-      <workItem from="1591082012718" duration="2502000" />
+      <workItem from="1591082012718" duration="21087000" />
     </task>
     <task id="LOCAL-00001" summary="修改逻辑结构">
       <created>1589445973808</created>
@@ -173,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590495196000</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="内容修改 update 和部分bug修复">
+      <created>1591089319876</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1591089319876</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,17 +239,18 @@
     <MESSAGE value="delete_content all！" />
     <MESSAGE value="内容添加模块及一些bug边角料修复" />
     <MESSAGE value="content修改 （差提交）" />
-    <option name="LAST_COMMIT_MESSAGE" value="content修改 （差提交）" />
+    <MESSAGE value="内容修改 update 和部分bug修复" />
+    <option name="LAST_COMMIT_MESSAGE" value="内容修改 update 和部分bug修复" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="586" y="218" key="#Inspections" timestamp="1590332368940">
+    <state x="586" y="218" key="#Inspections" timestamp="1591106128976">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="586" y="218" key="#Inspections/0.0.1920.1080@0.0.1920.1080" timestamp="1590332368940" />
-    <state x="842" y="401" key="#Notifications" timestamp="1589445544356">
+    <state x="586" y="218" key="#Inspections/0.0.1920.1080@0.0.1920.1080" timestamp="1591106128976" />
+    <state x="842" y="401" width="454" height="277" key="#Notifications" timestamp="1591089377987">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="842" y="401" key="#Notifications/0.0.1920.1080@0.0.1920.1080" timestamp="1589445544356" />
+    <state x="842" y="401" width="454" height="277" key="#Notifications/0.0.1920.1080@0.0.1920.1080" timestamp="1591089377987" />
     <state x="642" y="181" key="#PHP" timestamp="1589460686239">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -262,17 +287,17 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="644" y="239" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1589445033094" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590495220339">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1591089357793">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590495220339" />
-    <state x="662" y="138" width="596" height="804" key="find.popup" timestamp="1590465915219">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591089357793" />
+    <state x="662" y="138" width="596" height="804" key="find.popup" timestamp="1591092120646">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="662" y="138" width="596" height="804" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1590465915219" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1590333088306">
+    <state x="662" y="138" width="596" height="804" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1591092120646" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1591095129347">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1590333088306" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1591095129347" />
   </component>
 </project>

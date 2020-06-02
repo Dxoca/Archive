@@ -19,6 +19,13 @@ function getNowTime()
     return date('Y-m-d H:i:s');
 }
 
+function postsNum($mysqli, $table)
+{
+    $result = $mysqli->query("select * from $table");
+    return mysqli_num_rows($result);
+
+}
+
 /**
  * @return Mysqli|返回连接后的数据库对象
  */
@@ -60,7 +67,7 @@ function isLogin()
 }
 
 /**
- * 判断数据表是否存在
+ * 判断数据表是否存在 查看有无数据段count
  * @param $mysqli Mysqli对象
  * @param $table 要判断的表
  * @return bool
@@ -119,9 +126,8 @@ function initTable($mysqli)
                   TAG;
         $mysqli->query($sql_content);//创建内容表 sql执行
         $getNowTime = getNowTime();
-        $username = $_SESSION['username'];
         $mysqli->query("insert into `content` values (0 ,'欢迎使用Archive~ ','$getNowTime','Dxoca.cn',1)");
-        $mysqli->query("INSERT INTO `content` VALUES (null ,'但尽人事，莫问前程。','$getNowTime','$username',0)");
+        $mysqli->query("INSERT INTO `content` VALUES (null ,'但尽人事，莫问前程。','$getNowTime','寒光',0)");
 //            echo "content表创建完成";
     }
 
@@ -159,29 +165,15 @@ function initTable($mysqli)
     }
 }
 
+function foot()
+{
+    $str = <<<HTML
+<div  class="foot" >
+    Powered by <a target="blank" href="https://dxoca.cn/StudyNotes/349.html">Dxoca</a>&nbsp;|&nbsp;Github:<a target="blank" href="https://github.com/Dxoca/Archive/">Achive</a></body>
+</div>
+HTML;
+    echo $str;
+}
+
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

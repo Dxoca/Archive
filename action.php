@@ -49,23 +49,50 @@ if (!isLogin()) {
                 $result = $mysqli->query($sql_oldContent)->fetch_row();//项的所有字段取出
 
                 echo <<<TAG
+<link rel="stylesheet" type="text/css" href="css/quick.css">
+<div class="bg-image-pattern" style="
+    background: rgba(255, 255, 255, 0.05) url(images/bg-fixed.png) repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -997;
+"></div>
+<div class="bj-gd" style="
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -998;
+    background: url(images/868535394.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+"></div>
+<div id="content">
+            <div class="bg-light">
  <form action="action.php?action=new_edit_content&id=$id" method="post">
             <table align="center">
                 <caption><h4>Archive-修改</h4></caption>
                 <tr>
                     <th>
-                        <textarea rows="3" cols="40" type="text" name="text">$result[1]</textarea>
+                        <textarea rows="3" cols="40" type="text" name="text" style="background-color: #ffffff4a;">$result[1]</textarea>
                     </th>
                 </tr>
                 <tr>
                     <th>
                     <label>author:</label>
-                        <input  type="text" name="username" value="$result[3]">
+                        <input  type="text" name="username" value="$result[3]" style="background-color: #ffffff4a;">
                     </th>
                 </tr>
                 <tr><th><input type="submit" name="edit" value="修改"></th></tr>
             </table>
         </form>
+</div>
+</div>
 TAG;
             }
             break;
@@ -73,12 +100,12 @@ TAG;
             print_r($GLOBALS);
             $text = $_POST['text'];
             $username = $_POST['username'];
-            $id=$_GET['id'];
-            if($text!=''){
+            $id = $_GET['id'];
+            if ($text != '') {
                 $sql_update = "UPDATE content SET text = '$text' , username = '$username' WHERE Id = '$id'";//更新数据
                 $mysqli->query($sql_update);
                 echo "<script>alert('修改成功！');</script>";
-            }else{
+            } else {
                 echo "<script>alert('内容不能为空');</script>";
             }
             header('refresh:0.5; url=admin.php');
