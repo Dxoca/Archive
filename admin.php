@@ -57,6 +57,7 @@ if (isset($_POST['login'])) {
         header('refresh:0.1; url=admin.php');
     }
 } else if (isset($_POST['register'])) {
+    ## 注册页面
     header('refresh:0; url=register.php');
 } else {//直接进入admin页面
     # 已登录

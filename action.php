@@ -1,6 +1,5 @@
 <?php
 require_once 'model.php';
-header('Content-type:text/html; charset=utf-8');
 /**
  * 相关action操作模块
  * 删除
@@ -23,7 +22,6 @@ if (!isLogin()) {
             echo "<script>alert('清空成功');javascript:history.back(1);</script>";
             break;
         case "delete_content":#### 删除内容
-
             $idArray = $_POST['checkbox_content'];
             ## 强制转换为数组，不然报错（为什么呢 是因为刚开始是对象么qwq）
             if (count((array)$idArray) <= 0) {//如果没有选择 技术数组个数
@@ -34,8 +32,8 @@ if (!isLogin()) {
                 foreach ($idArray as $id) {
                     $mysqli->query("delete from content where Id='$id'");
                     echo "删除id:(" . $id . ")成功！<br/>";
-                    header('refresh:1; url=admin.php');
                 }
+                header('refresh:1; url=admin.php');
             }
 //            echo '你选择了:'.implode(',',$idArray);
             break;
@@ -47,7 +45,6 @@ if (!isLogin()) {
             else {
                 $sql_oldContent = "select * from content where Id='$id'";//查询id对应的项
                 $result = $mysqli->query($sql_oldContent)->fetch_row();//项的所有字段取出
-
                 echo <<<TAG
 <link rel="stylesheet" type="text/css" href="css/quick.css">
 <div class="bg-image-pattern" style="
@@ -97,19 +94,18 @@ TAG;
             }
             break;
         case "new_edit_content":
-            print_r($GLOBALS);
+//            print_r($GLOBALS);//调试数据
             $text = $_POST['text'];
             $username = $_POST['username'];
             $id = $_GET['id'];
-            if ($text != '') {
+            if ($text != '') {//先判断数据合理 保证sql语句正确，实际应该在bt提交的时候js判断
                 $sql_update = "UPDATE content SET text = '$text' , username = '$username' WHERE Id = '$id'";//更新数据
                 $mysqli->query($sql_update);
                 echo "<script>alert('修改成功！');</script>";
             } else {
                 echo "<script>alert('内容不能为空');</script>";
             }
-            header('refresh:0.5; url=admin.php');
-
+            echo "<script>url='admin.php';window.location.href=url;</script>";//这里用js跳转是因为是第二次在该页面跳转会warning.
             break;
         case "insert_content":## 添加内容 最后一个是 喜欢
 //            print_r($GLOBALS);
