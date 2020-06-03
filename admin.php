@@ -104,7 +104,10 @@ if (isset($_POST['login'])) {
                 echo "你好! <a href='#' class='red'>" . $_SESSION['username'] . '</a> ,欢迎来到后台!';
                 echo "<a href='logout.php'>注销</a>&nbsp;<a href='index.php'>首页</a><br>";
                 ?>
-                这里是对数据进行 增删改查 的后台系统。qwq 刷新页面即可改变写入框内容
+                这里是对数据进行 增删改查 的后台系统。<br>
+                qwq 刷新页面即可改变写入框内容,尽量用电脑浏览本渣小程序，后台响应式不想折腾了，一开始就用了表格输出（图方便）...
+                感觉各种判定都，，挺完善的..欢迎提出建议，项目代码在底部
+                有喜欢字段，但是没喜欢功能（前端写出来太难看了...暂时就关闭这个功能了）
                 <br>
             </div>
             <div class="list bg-light">
@@ -245,4 +248,3 @@ if (isset($_POST['login'])) {
 }
 $mysqli = null;//清理缓存
 ?>
-

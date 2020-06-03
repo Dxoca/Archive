@@ -61,7 +61,7 @@ if (isLogin()) {
 //    echo "<script>alert('当前未登录')</script>";
 }
 ?>
-<div id="content" class="app-content" style="width: 50%;margin: 0 auto;">
+<div id="content" class="app-content" style="/**width: 50%;margin: 0 auto;**/">
     <a class="off-screen-toggle hide"></a>
     <main class="app-content-body ">
         <header class="bg-light lter b-b wrapper-md">

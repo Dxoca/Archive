@@ -27,7 +27,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="content修改 （差提交）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/quick.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/quick.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model.php" afterDir="false" />
     </list>
@@ -103,7 +104,8 @@
       <workItem from="1590329420651" duration="6768000" />
       <workItem from="1590463345308" duration="6867000" />
       <workItem from="1590488793531" duration="4413000" />
-      <workItem from="1591082012718" duration="23603000" />
+      <workItem from="1591082012718" duration="26840000" />
+      <workItem from="1591144088194" duration="5944000" />
     </task>
     <task id="LOCAL-00001" summary="修改逻辑结构">
       <created>1589445973808</created>
@@ -196,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591109829027</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Achive1.1 修复bug">
+      <created>1591112030041</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1591112030041</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +249,8 @@
     <MESSAGE value="content修改 （差提交）" />
     <MESSAGE value="内容修改 update 和部分bug修复" />
     <MESSAGE value="前端完成 Achive1.0诞生" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端完成 Achive1.0诞生" />
+    <MESSAGE value="Achive1.1 修复bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Achive1.1 修复bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="218" key="#Inspections" timestamp="1591106128976">
@@ -287,10 +297,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="644" y="239" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1589445033094" />
-    <state x="590" y="276" key="Vcs.Push.Dialog.v2" timestamp="1591109836511">
+    <state x="590" y="276" key="Vcs.Push.Dialog.v2" timestamp="1591112033015">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="590" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591109836511" />
+    <state x="590" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591112033015" />
     <state x="662" y="138" width="596" height="804" key="find.popup" timestamp="1591092120646">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -7,9 +7,19 @@
 .red {
     color: #F00
 }
+
 #content{
     width: 50%;
     margin: 0 auto;
+}
+/**
+手机界面
+ */
+@media screen and (max-width: 500px) {
+    #content{
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 .list {
     padding: 15px;
@@ -28,9 +38,9 @@
     color: #f06a6a;
 }
 body a {
-     color: #337ab7;
-     text-decoration: none;
- }
+    color: #337ab7;
+    text-decoration: none;
+}
 body{
     margin: 0;
 }
