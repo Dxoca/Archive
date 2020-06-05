@@ -10,7 +10,7 @@ require_once 'model.php';
 if (!isLogin()) {
     echo "<script>alert('当前未登录');</script>";
     header('refresh:0.1; url=index.php');
-} else {
+} else {//执行action各个方法的判断
     $mysqli = connect();
 ## 删除登录日志
 ### 判断地址栏参数action的值是

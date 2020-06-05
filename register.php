@@ -2,7 +2,7 @@
 require_once 'model.php';//加载模块
 header('Content-type:text/html; charset=utf-8');
 
-
+//已提交注册数据
 if ($_GET['action'] == "register") {
     $mysqli = connect();//连接数据库
     $username = $_POST['r_username'];
@@ -15,15 +15,15 @@ if ($_GET['action'] == "register") {
         header('refresh:0.1; url=register.php');
         exit;
     } else {
-        $result = $mysqli->query("select * from `user` where email='$email'");
+        $result = $mysqli->query("select * from `user` where email='$email'");//取出email（用户名）为主键的 数据项
         $row = $result->fetch_row();
-        if ($result->num_rows == 0) {##0是主键未注册
+        if ($result->num_rows == 0) {##0 是主键未注册，没有查到 该数据 说明未注册
             $mysqli->query("insert into `user` values ('$email','$username','$password',null )");
             echo "<script>alert('注册成功！');</script>";
             ### 跳转到 登录界面  action 把 信息自动填写，直接登录即可登录原本直接登录了 ，可是没有函数化登录模块！。。
             ##或者 直接 session开启似乎也可以
             header('refresh:0.1; url=login.php');
-        } else {
+        } else {//已有该字段
             echo "<script>alert('邮箱：$row[0]已注册！');</script>";
         }
     }

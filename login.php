@@ -7,6 +7,7 @@
 
 require_once 'model.php';//加载常量
 header('Content-type:text/html; charset=utf-8');
+//判断是否登录
 if (isLogin()) {
     echo "<script>alert('你已登录！')</script>";
     header('refresh:0.1; url=admin.php');

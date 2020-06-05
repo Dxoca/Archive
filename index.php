@@ -15,7 +15,6 @@ header('Content-type:text/html; charset=utf-8');
     <meta name="renderer" content="webkit">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
     <link rel="stylesheet" type="text/css" href="./css/quick.css">
-
 </head>
 <body>
 <?php
@@ -75,8 +74,9 @@ if (isLogin()) {
                 //执行SQL 查询语句，并将结果集以表格的形式输出
                 $content_sql = "select * from content  ORDER BY `Id` DESC";//查出表中所有数据 按id逆序！！
                 $result = $mysqli->query($content_sql);
-
+                //颜色数组
                 $color = array("light", "info", "dark", "success", "black", "warning", "primary", "danger");
+                //数据初始化
                 $year = 0;
                 $mon = 0;
                 $i = 0;
@@ -84,11 +84,13 @@ if (isLogin()) {
                 $output = '';
                 $x = 0;
                 $num = 0;
+                //遍历数据项
                 while ($row = $result->fetch_row()) {
                     $timestamp = strtotime($row[2]);
                     //日期转换为UNIX时间戳用函数：strtotime() 进行处理
                     $year_tmp = date('Y', $timestamp);
                     $mon_tmp = date('m', $timestamp);
+
                     $y = $year;
                     $m = $mon;
                     if ($year > $year_tmp || $mon > $mon_tmp) {
@@ -96,13 +98,13 @@ if (isLogin()) {
                     }
                     if ($year != $year_tmp || $mon != $mon_tmp) {
                         if ($x != 0) {
-                            $output .= '</div>';//.tl-body
+                            $output .= '</div>';//.tl-body 结束
                         }
                         $year = $year_tmp;
                         $mon = $mon_tmp;
                         $x++;
                         if ($x >= 8) $x = 1;
-                        $colorSec = $color[$x];
+                        $colorSec = $color[$x];//取出颜色
                         $output .= '<li class="tl-header">
                         <h2 class="btn btn-sm btn-' . $colorSec . ' btn-rounded m-t-none">' . date('Y年m月', $timestamp) . '</h2>
                         </li>

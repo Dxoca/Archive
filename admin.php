@@ -60,8 +60,8 @@ if (isset($_POST['login'])) {
     ## 注册页面
     header('refresh:0; url=register.php');
 } else {//直接进入admin页面
-    # 已登录
-    if (isLogin()) {
+    //判断是否已登录
+    if (isLogin()) {# 已登录
         ?>
 
         <html>
@@ -241,8 +241,10 @@ if (isset($_POST['login'])) {
         <?php foot() ?>
         </body>
         </html>
+
         <?php
-    } else {## 未登录
+
+    } else {## 未登录 跳转登录界面
         header('refresh:0.1; url=login.php');
 //        echo "<script>alert('登录失效，请重新登录')</script>";
     }
