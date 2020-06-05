@@ -27,13 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cff7b186-7d0d-41da-bbc3-865d81d74e06" name="Default Changelist" comment="content修改 （差提交）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action.php" beforeDir="false" afterPath="$PROJECT_DIR$/action.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +48,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP7.3.4nst" />
   <component name="ProjectId" id="1btIZZ5tcWltI5HKalEgt40NTVx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -109,7 +104,8 @@
       <workItem from="1590488793531" duration="4413000" />
       <workItem from="1591082012718" duration="26840000" />
       <workItem from="1591144088194" duration="13908000" />
-      <workItem from="1591325653049" duration="1938000" />
+      <workItem from="1591325653049" duration="5420000" />
+      <workItem from="1591338680638" duration="1723000" />
     </task>
     <task id="LOCAL-00001" summary="修改逻辑结构">
       <created>1589445973808</created>
@@ -223,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591159114521</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="achive1.3 更新注释">
+      <created>1591327697542</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1591327697542</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +273,8 @@
     <MESSAGE value="Achive1.1 修复bug" />
     <MESSAGE value="Achive1.2 修复bug 添加响应式" />
     <MESSAGE value="Achive1.3 修复bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Achive1.3 修复bug" />
+    <MESSAGE value="achive1.3 更新注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="achive1.3 更新注释" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="218" key="#Inspections" timestamp="1591106128976">
@@ -317,10 +321,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="644" y="239" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1589445033094" />
-    <state x="590" y="276" key="Vcs.Push.Dialog.v2" timestamp="1591159126410">
+    <state x="590" y="276" key="Vcs.Push.Dialog.v2" timestamp="1591327702615">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="590" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591159126410" />
+    <state x="590" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591327702615" />
     <state x="662" y="138" width="596" height="804" key="find.popup" timestamp="1591325679419">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
